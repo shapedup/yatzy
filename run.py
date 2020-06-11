@@ -1,3 +1,4 @@
+# This file has mainly been used to test the class methods of YatzyScoresheet()
 from dice import D6
 from hands import YatzyHand
 from scoresheets import YatzyScoresheet
@@ -44,11 +45,4 @@ print('Hand:', hand, 'Pair with 3oak:', YatzyScoresheet().score_one_pair(hand)) 
 hand[:] = [five, five, five, five, five]
 print('Hand:', hand, 'Pair with Yatzy:', YatzyScoresheet().score_one_pair(hand)) # 10
 print('Hand:', hand, '3oak with Yatzy:', YatzyScoresheet().score_three_kind(hand)) # 15
-print('Hand:', hand, '4oak with Yatzy:', YatzyScoresheet().score_four_kind(hand)) # 10
-
-# hand = YatzyHand()
-# print(hand)
-# ones = YatzyScoresheet().score_ones(hand)
-# print(ones)
-# score = YatzyScoresheet().scores()
-# print(score)
+print('Hand:', hand, '4oak with Yatzy:', YatzyScoresheet().score_four_kind(hand)) # 20
