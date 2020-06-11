@@ -25,13 +25,6 @@ class YatzyScoresheet:
     """Score all sixes"""
     def score_sixes(self, hand):
         return sum(hand.sixes)
-        
-    """Total upper section score"""
-    def total_upper_score(self):
-        total_upper = sum(self.score_ones, self.score_twos, self.score_threes, self.score_fours, self.score_fives, self.score_sixes)
-        if total_upper >= 63:
-            return total_upper + 50
-        return total_upper
     
     # = Lower Section Scoring Methods =
     """Method to score multiples of same dice"""
@@ -118,9 +111,6 @@ class YatzyScoresheet:
                 return 50
             return 0
 
-    """Overall score"""
-    def overall_score(self):
-        return sum()
 
 class Scoring:
     def __init__(self, hand = YatzyHand()):
@@ -145,3 +135,20 @@ class Scoring:
             "YATZY!": YatzyScoresheet().score_yatzy(self.hand),
         }
     
+    def total_upper_score(self):
+        total_upper = []
+        for key, value in self.scores.items()
+            if key != "pair":
+                total_upper.append(value)
+                continue
+            else:
+                break
+        return sum(total_upper)
+    
+    def total_upper_score_bonus(self):
+        if self.total_upper_score() >= 63:
+            return 50
+        return 0
+    
+    def overall_score(self):
+        return sum(self.scores().values(), self.total_upper_score(), self.total_upper_score_bonus)
